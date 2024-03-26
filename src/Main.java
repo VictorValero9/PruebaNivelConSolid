@@ -1,6 +1,6 @@
 import model.*;
 import utilities.*;
-
+import enums.StrengthLevel;
 public class Main {
     public static void main(String[] args) {
        IConsole console = new Console();
@@ -17,7 +17,10 @@ public class Main {
                );
 
        int points = verifier.calculate(password);
+       StrengthLevel securityLevel = StrengthLevel.getSecurityLevel(points);
+
        console.write("La puntuación és: " + points);
+       console.write("La seguridad de la contraseña es: " + securityLevel);
 
        if(points < configuration.getUmbralConfirmacion()){
            if(console.confirm("La contraseña es débil. ¿Desea continuar? (s/n)")){

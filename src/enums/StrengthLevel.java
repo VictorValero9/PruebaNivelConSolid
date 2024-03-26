@@ -23,4 +23,17 @@ public enum StrengthLevel {
         return descripcion;
     }
 
+    public static StrengthLevel getSecurityLevel(int points) {
+        if (points >= 1 && points <= 2) {
+            return MUY_DEBIL;
+        } else if (points >= 3 && points <= 5) {
+            return DEBIL;
+        } else if (points >= 6 && points <= 7) {
+            return MODERADA;
+        } else if (points >= 8 && points <= 9) {
+            return FUERTE;
+        } else {
+            return MUY_FUERTE;
+        }
+    }
 }
